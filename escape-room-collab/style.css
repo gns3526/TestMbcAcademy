@@ -447,6 +447,149 @@ code { font-family: Consolas, "Courier New", monospace; overflow-wrap: anywhere;
 .choice-button:disabled { cursor: default; }
 .game-button { background: var(--gold); border-color: var(--gold); color: #12100b; padding: 0 14px; }
 
+.break-crate {
+  position: relative;
+  min-height: 190px;
+  padding: 14px;
+  border: 1px solid rgba(212, 166, 76, .48);
+  background:
+    linear-gradient(135deg, rgba(212, 166, 76, .12), transparent 38%),
+    linear-gradient(225deg, rgba(79, 183, 173, .1), transparent 52%),
+    rgba(0, 0, 0, .22);
+  overflow: visible;
+}
+
+.crate-label {
+  color: var(--gold);
+  font: 900 13px Consolas, "Courier New", monospace;
+  text-transform: uppercase;
+}
+
+.crate-stage {
+  position: relative;
+  width: min(280px, 82%);
+  height: 112px;
+  margin: 14px auto 8px;
+}
+
+.crate-piece,
+.crate-fragment,
+.crate-spark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  transition:
+    transform 620ms cubic-bezier(.17, .82, .31, 1.08),
+    opacity 220ms ease,
+    box-shadow 260ms ease;
+  will-change: transform;
+}
+
+.crate-piece {
+  border: 1px solid rgba(243, 240, 232, .2);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, .1) 1px, transparent 1px),
+    linear-gradient(rgba(0, 0, 0, .18) 1px, transparent 1px),
+    #7a4c27;
+  background-size: 28px 100%, 100% 24px, auto;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .3);
+}
+
+.crate-lid {
+  width: 190px;
+  height: 26px;
+  transform: translate(-50%, -76px);
+}
+
+.crate-left {
+  width: 44px;
+  height: 82px;
+  transform: translate(-96px, -42px);
+}
+
+.crate-right {
+  width: 44px;
+  height: 82px;
+  transform: translate(52px, -42px);
+}
+
+.crate-front {
+  width: 148px;
+  height: 82px;
+  transform: translate(-50%, -42px);
+  background:
+    linear-gradient(35deg, transparent 47%, rgba(243, 240, 232, .16) 48% 52%, transparent 53%),
+    linear-gradient(-35deg, transparent 47%, rgba(243, 240, 232, .16) 48% 52%, transparent 53%),
+    #6c4223;
+}
+
+.crate-spark {
+  width: 68px;
+  height: 68px;
+  border: 1px solid rgba(212, 166, 76, .65);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.25);
+  box-shadow: 0 0 34px rgba(212, 166, 76, .45);
+}
+
+.crate-fragment {
+  width: 22px;
+  height: 10px;
+  opacity: 0;
+  border: 1px solid rgba(243, 240, 232, .18);
+  background: #8a592f;
+  transform: translate(-50%, -50%) rotate(0deg) scale(.3);
+}
+
+.crate-fragment.f1 { --x: -132px; --y: -54px; --r: -31deg; }
+.crate-fragment.f2 { --x: -92px; --y: 42px; --r: 48deg; width: 30px; }
+.crate-fragment.f3 { --x: -52px; --y: -78px; --r: 72deg; height: 14px; }
+.crate-fragment.f4 { --x: 6px; --y: 54px; --r: -18deg; }
+.crate-fragment.f5 { --x: 58px; --y: -70px; --r: 36deg; width: 28px; }
+.crate-fragment.f6 { --x: 108px; --y: 36px; --r: -64deg; height: 13px; }
+.crate-fragment.f7 { --x: 136px; --y: -24px; --r: 24deg; }
+.crate-fragment.f8 { --x: -150px; --y: 22px; --r: -78deg; width: 18px; }
+.crate-fragment.f9 { --x: -24px; --y: -98px; --r: 14deg; width: 26px; }
+.crate-fragment.f10 { --x: 88px; --y: 74px; --r: 87deg; }
+.crate-fragment.f11 { --x: -112px; --y: -6px; --r: 11deg; height: 12px; }
+.crate-fragment.f12 { --x: 24px; --y: -18px; --r: -42deg; width: 32px; }
+
+.break-crate.broken .crate-lid {
+  transform: translate(-48%, -104px) rotate(-12deg);
+}
+
+.break-crate.broken .crate-left {
+  transform: translate(-132px, -30px) rotate(-24deg);
+}
+
+.break-crate.broken .crate-right {
+  transform: translate(78px, -22px) rotate(27deg);
+}
+
+.break-crate.broken .crate-front {
+  transform: translate(-50%, -18px) rotate(4deg);
+  filter: brightness(.9);
+}
+
+.break-crate.broken .crate-spark {
+  opacity: .5;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.break-crate.broken .crate-fragment {
+  opacity: 1;
+  transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(1);
+}
+
+.crate-caption {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: center;
+}
+
 .status-line { min-height: 30px; margin-top: 12px; color: var(--muted); }
 .evidence-box {
   margin-top: 16px;
