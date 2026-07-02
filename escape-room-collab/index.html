@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Git Pull Push Escape</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page">
+  <header class="top">
+    <div class="brand"><span class="mark">G</span><span>Git Pull Push Escape</span></div>
+    <span class="tag">public collab mode</span>
+  </header>
+  <section class="hero">
+    <div>
+      <h1>말 대신 Git으로 탈출</h1>
+      <p>전체 게임 파일은 레포에 공개되어 있습니다. 각자 자기 미션과 구역을 조사하고, 찾은 조각을 `shared_board/fragments`에 기록해 push하세요.</p>
+      <div class="grid">
+        <a class="card real" href="rooms/01-start/index.html"><b>게임 시작</b><span>규칙과 첫 동선</span></a>
+        <a class="card" href="missions/Giho/index.html"><b>미션 폴더</b><span>자기 이름에서 출발</span></a>
+        <a class="card" href="shared_board/DISCOVERY_LOG.md"><b>공유 로그</b><span>발견 기록 양식</span></a>
+        <a class="card locked" href="rooms/02-team-gate/index.html"><b>TEAM_GATE</b><span>첫 비밀번호 문</span></a>
+        <a class="card" href="rooms/03-mini-game/index.html"><b>Git 미니게임</b><span>pull/add/commit/push 순서</span></a>
+        <a class="card locked" href="rooms/04-final-vault/index.html"><b>FINAL_VAULT</b><span>최종 비밀번호 문</span></a>
+      </div>
+      <div class="commands">
+        <div class="cmd">python serve.py</div>
+        <div class="cmd">git pull --rebase</div>
+        <div class="cmd">python shared_board/merge_clues.py</div>
+      </div>
+    </div>
+    <aside class="stage">
+      <div class="matrix"><span>pull</span><span>find</span><span>log</span><span>push</span><span>merge</span><span>gate</span><span>mini</span><span>vault</span></div>
+    </aside>
+  </section>
+  <footer class="footer"><a href="README_PLAYER.md">README_PLAYER</a><a href="missions/">missions</a><a href="zones/">zones</a></footer>
+</main>
+</body>
+</html>
