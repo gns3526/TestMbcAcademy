@@ -15,7 +15,7 @@ python serve.py
 ## 플레이
 
 1. 자기 이름의 `missions/<이름>/index.html`에서 출발합니다.
-2. `zones/<이름>/` 안의 HTML 주석, `data-*` 속성, 흐린 텍스트를 조사합니다.
+2. `zones/<이름>/` 안의 서랍, 상자, 금고, 표지판을 열어 조각을 찾습니다.
 3. 조각을 찾으면 `shared_board/fragments/<이름>.txt`에 기록합니다.
 4. push가 끝나면 말로는 `push`만 말합니다.
 5. 다른 사람은 `pull`을 듣고 `git pull --rebase` 합니다.

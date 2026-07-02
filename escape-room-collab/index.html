@@ -15,26 +15,22 @@
   <section class="hero">
     <div>
       <h1>말 대신 Git으로 탈출</h1>
-      <p>전체 게임 파일은 레포에 공개되어 있습니다. 각자 자기 미션과 구역을 조사하고, 찾은 조각을 `shared_board/fragments`에 기록해 push하세요.</p>
+      <p>각자 자기 미션 구역을 조사하고, 발견한 조각을 공유 보드에 남긴 뒤 push하세요. 다른 팀원은 pull로 새 조각을 받아 문을 엽니다.</p>
       <div class="grid">
         <a class="card real" href="rooms/01-start/index.html"><b>게임 시작</b><span>규칙과 첫 동선</span></a>
         <a class="card" href="missions/Giho/index.html"><b>미션 폴더</b><span>자기 이름에서 출발</span></a>
-        <a class="card" href="shared_board/DISCOVERY_LOG.md"><b>공유 로그</b><span>발견 기록 양식</span></a>
+        <a class="card" href="shared_board/DISCOVERY_LOG.md"><b>공유 보드</b><span>발견 조각 기록 양식</span></a>
         <a class="card locked" href="rooms/02-team-gate/index.html"><b>TEAM_GATE</b><span>첫 비밀번호 문</span></a>
-        <a class="card" href="rooms/03-mini-game/index.html"><b>Git 미니게임</b><span>pull/add/commit/push 순서</span></a>
+        <a class="card" href="rooms/03-mini-game/index.html"><b>지뢰찾기 키 게임</b><span>점수로 미니게임 키 획득</span></a>
         <a class="card locked" href="rooms/04-final-vault/index.html"><b>FINAL_VAULT</b><span>최종 비밀번호 문</span></a>
       </div>
-      <div class="commands">
-        <div class="cmd">python serve.py</div>
-        <div class="cmd">git pull --rebase</div>
-        <div class="cmd">python shared_board/merge_clues.py</div>
-      </div>
+      <div class="note">게임 진행: 조사 → 조각 기록 → push → pull → 문 열기 → 미니게임 키 획득 → 최종 금고</div>
     </div>
     <aside class="stage">
       <div class="matrix"><span>pull</span><span>find</span><span>log</span><span>push</span><span>merge</span><span>gate</span><span>mini</span><span>vault</span></div>
     </aside>
   </section>
-  <footer class="footer"><a href="README_PLAYER.md">README_PLAYER</a><a href="missions/">missions</a><a href="zones/">zones</a></footer>
+  <footer class="footer"><a href="README_PLAYER.md">플레이어 안내</a><a href="missions/">미션 카드</a><a href="zones/">조사 구역</a></footer>
 </main>
 </body>
 </html>
