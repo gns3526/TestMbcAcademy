@@ -19,6 +19,8 @@ python serve.py
 3. 조각을 찾으면 `shared_board/fragments/<이름>.txt`에 기록합니다.
 4. push가 끝나면 말로는 `push`만 말합니다.
 5. 다른 사람은 `pull`을 듣고 `git pull --rebase` 합니다.
+6. `03-mini-game`에서 점수를 얻어 미니게임 키를 받습니다.
+7. 최종 금고에는 `FINAL_VAULT` 비밀번호와 미니게임 키가 모두 필요합니다.
 
 ## 조각 형식
 
