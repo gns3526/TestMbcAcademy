@@ -1,0 +1,23 @@
+Git 릴레이 통신 규칙
+
+학생들은 서로 말할 수 없습니다.
+말로 할 수 있는 단어는 pull 또는 push 뿐입니다.
+
+수정 가능:
+shared_clues/자기이름/
+99_lies/자기팀_가짜힌트.txt
+
+원본 방 파일은 수정하지 않습니다.
+
+흐름:
+1. git pull
+2. 조사
+3. shared_clues/자기이름/ 안에 단서 파일 생성
+4. git add escape-room/shared_clues
+5. git commit -m "share clue"
+6. git push
+7. 말로는 push만 말하기
+
+NIGHTMARE LETTER 05 = e
+
+MBC-REAL

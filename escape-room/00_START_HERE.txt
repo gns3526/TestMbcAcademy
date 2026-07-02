@@ -1,0 +1,35 @@
+MBC Git Relay Escape
+
+목표:
+말 대신 git pull / git push로 단서를 공유해서 악몽 금고의 최종 목적지에 도착하세요.
+
+대화 규칙:
+서로 말할 수 있는 단어는 pull 또는 push 뿐입니다.
+
+시작:
+1. 브라우저로 index.html을 엽니다.
+2. PowerShell에서 tools/setup.ps1을 한 번 실행합니다.
+3. 단서를 찾으면 shared_clues/자기이름/ 안에 파일을 만들고 push 합니다.
+
+추천 명령:
+start index.html
+powershell -ExecutionPolicy Bypass -File .\tools\setup.ps1
+git pull
+powershell -ExecutionPolicy Bypass -File .\tools\new-clue.ps1
+git add escape-room/shared_clues
+git commit -m "share clue"
+git push
+
+진짜 단서 도장:
+MBC-REAL
+
+가짜 도장 예시:
+MBC-REEL
+M8C-REAL
+MBC-COPY
+
+악몽 문자 형식:
+NIGHTMARE LETTER 번호 = 글자
+
+최종 금고:
+06_password_maze/vault
