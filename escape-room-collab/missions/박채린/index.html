@@ -1,1 +1,71 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>박채린 Mission</title><link rel="stylesheet" href="../../style.css"></head><body><main class="page"><header class="top"><div class="brand"><span class="mark">박</span><span>박채린 Mission</span></div><span class="tag">personal route</span></header><h1>박채린</h1><p>자기 구역의 노드 상자와 숫자 금고를 열어 조각을 찾으세요.</p><div class="grid"><a class="card real" href="../../zones/박채린/index.html"><b>박채린 zone</b><span>조사 시작</span></a><a class="card" href="../../shared_board/DISCOVERY_LOG.md"><b>기록 양식</b><span>조각 형식 확인</span></a></div></main></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>박채린 감식 미션</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../case_game.js" defer></script>
+</head>
+<body>
+<main class="page">
+  <header class="top">
+    <div class="brand"><span class="mark">박</span><span>박채린 감식 미션</span></div>
+    <span class="tag">scene rebuild</span>
+  </header>
+
+  <section class="mission-layout" data-mini-game data-clue="CASE|LOCATION|B스튜디오">
+    <div>
+      <h1>현장 재구성</h1>
+      <p>피해자가 발견된 곳과 실제 공격이 일어난 곳이 다를 수 있습니다. 끌린 흔적과 조명 그림자를 맞춰 현장을 특정하세요.</p>
+      <div class="case-stats">
+        <div class="case-stat"><b>Score</b><span data-score>0</span></div>
+        <div class="case-stat"><b>Solved</b><span data-solved>0/3</span></div>
+        <div class="case-stat"><b>Role</b><span>현장</span></div>
+      </div>
+      <div class="note">현장명 하나가 사건회의실의 위치 선택지를 결정합니다.</div>
+    </div>
+
+    <aside class="mini-console">
+      <div class="puzzle-step" data-step>
+        <h2>1. 바닥 흔적</h2>
+        <p>혈흔이 끊겼다가 다시 이어지는 구역은?</p>
+        <div class="choice-grid">
+          <button class="choice-button" type="button" data-choice data-feedback="청소 기록만 남아 있습니다.">분장실</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="케이블 아래에 눌린 혈흔이 있습니다.">B스튜디오</button>
+          <button class="choice-button" type="button" data-choice data-feedback="프린터 토너 자국입니다.">A편집실</button>
+          <button class="choice-button" type="button" data-choice data-feedback="비가 들어온 흔적입니다.">옥상 통로</button>
+        </div>
+      </div>
+
+      <div class="puzzle-step" data-step>
+        <h2>2. 그림자 각도</h2>
+        <p>카메라에 찍힌 그림자와 맞는 조명 위치는?</p>
+        <div class="choice-grid three">
+          <button class="choice-button" type="button" data-choice data-feedback="그림자 방향이 반대입니다.">분장대 조명</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="B스튜디오 천장 조명 각도와 맞습니다.">스튜디오 2번 조명</button>
+          <button class="choice-button" type="button" data-choice data-feedback="높이가 맞지 않습니다.">복도 비상등</button>
+        </div>
+      </div>
+
+      <div class="puzzle-step" data-step>
+        <h2>3. 문 안쪽 흠집</h2>
+        <p>문 안쪽에 남은 새 흠집은 어느 장소의 문인가요?</p>
+        <div class="choice-grid three">
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="방음문 안쪽 흠집이 새로 생겼습니다.">B스튜디오</button>
+          <button class="choice-button" type="button" data-choice data-feedback="오래된 장비 이동 흠집입니다.">창고</button>
+          <button class="choice-button" type="button" data-choice data-feedback="외부 손잡이 쪽 흠집입니다.">옥상 통로</button>
+        </div>
+      </div>
+
+      <div class="status-line" data-status></div>
+      <div class="evidence-box" data-evidence hidden>
+        <b>증거 획득</b>
+        <code>CASE|LOCATION|B스튜디오</code>
+        <button class="game-button" type="button" data-copy>증거 한 줄 복사</button>
+      </div>
+    </aside>
+  </section>
+</main>
+</body>
+</html>

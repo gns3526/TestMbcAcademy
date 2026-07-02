@@ -1,1 +1,71 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>jebeen Mission</title><link rel="stylesheet" href="../../style.css"></head><body><main class="page"><header class="top"><div class="brand"><span class="mark">J</span><span>jebeen Mission</span></div><span class="tag">personal route</span></header><h1>jebeen</h1><p>자기 구역에서 진짜 조각과 가짜 조각을 구분하세요.</p><div class="grid"><a class="card real" href="../../zones/jebeen/index.html"><b>jebeen zone</b><span>조사 시작</span></a><a class="card" href="../../shared_board/DISCOVERY_LOG.md"><b>기록 양식</b><span>조각 형식 확인</span></a></div></main></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jebeen 감식 미션</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../case_game.js" defer></script>
+</head>
+<body>
+<main class="page">
+  <header class="top">
+    <div class="brand"><span class="mark">J</span><span>jebeen 감식 미션</span></div>
+    <span class="tag">weapon lab</span>
+  </header>
+
+  <section class="mission-layout" data-mini-game data-clue="CASE|WEAPON|방송대상 트로피">
+    <div>
+      <h1>소품실 감식</h1>
+      <p>소품실에는 그럴듯한 물건이 너무 많습니다. 무게, 혈흔, 이동 흔적을 맞춰 실제 흉기를 특정하세요.</p>
+      <div class="case-stats">
+        <div class="case-stat"><b>Score</b><span data-score>0</span></div>
+        <div class="case-stat"><b>Solved</b><span data-solved>0/3</span></div>
+        <div class="case-stat"><b>Role</b><span>흉기</span></div>
+      </div>
+      <div class="note">틀린 소품도 단서처럼 보입니다. 세 조건이 동시에 맞는 것만 증거입니다.</div>
+    </div>
+
+    <aside class="mini-console">
+      <div class="puzzle-step" data-step>
+        <h2>1. 충격 흔적</h2>
+        <p>상처 폭과 가장 가까운 물건을 고르세요.</p>
+        <div class="choice-grid">
+          <button class="choice-button" type="button" data-choice data-feedback="폭은 맞지만 너무 가볍습니다.">카메라 삼각대</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="상처 폭과 무게가 동시에 맞습니다.">방송대상 트로피</button>
+          <button class="choice-button" type="button" data-choice data-feedback="날카로운 상처가 남아야 합니다.">컷팅칼</button>
+          <button class="choice-button" type="button" data-choice data-feedback="배터리에는 혈흔이 없습니다.">조명 배터리</button>
+        </div>
+      </div>
+
+      <div class="puzzle-step" data-step>
+        <h2>2. 혈흔 위치</h2>
+        <p>닦아낸 흔적이 남은 위치를 선택하세요.</p>
+        <div class="choice-grid three">
+          <button class="choice-button" type="button" data-choice data-feedback="먼지뿐입니다.">손잡이 홈</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="금색 모서리에 미세 혈흔이 남았습니다.">금색 모서리</button>
+          <button class="choice-button" type="button" data-choice data-feedback="피해자 혈액형이 아닙니다.">받침대 바닥</button>
+        </div>
+      </div>
+
+      <div class="puzzle-step" data-step>
+        <h2>3. 이동 흔적</h2>
+        <p>사건 직후 제자리로 돌아간 물건은?</p>
+        <div class="choice-grid three">
+          <button class="choice-button" type="button" data-choice data-feedback="분장실 대여 기록과 맞지 않습니다.">붉은 우산</button>
+          <button class="choice-button" type="button" data-choice data-feedback="먼지 선이 끊기지 않았습니다.">삼각대</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="진열장 먼지 선이 끊겨 있습니다.">트로피</button>
+        </div>
+      </div>
+
+      <div class="status-line" data-status></div>
+      <div class="evidence-box" data-evidence hidden>
+        <b>증거 획득</b>
+        <code>CASE|WEAPON|방송대상 트로피</code>
+        <button class="game-button" type="button" data-copy>증거 한 줄 복사</button>
+      </div>
+    </aside>
+  </section>
+</main>
+</body>
+</html>

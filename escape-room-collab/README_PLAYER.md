@@ -1,6 +1,7 @@
-# Git Pull Push Escape
+# Midnight Case Pull Push
 
-대화 금지. 말할 수 있는 단어는 `pull` 또는 `push`뿐입니다.
+말로 단서를 공유하지 않고 `pull` / `push`만 말할 수 있는 협력 추리 게임입니다.
+HTML은 서로 이어져 있지 않습니다. 각자 자기 미션 파일을 직접 열고, 미니게임에서 얻은 증거 한 줄을 공유 보드에 남깁니다.
 
 ## 시작
 
@@ -10,29 +11,37 @@ cd escape-room-collab
 python serve.py
 ```
 
-브라우저에서 `http://localhost:8000`을 엽니다.
+브라우저에서 `http://localhost:8000`을 열고, 자기 이름의 미션 경로를 확인합니다.
 
-## 플레이
+## 플레이 흐름
 
-1. 자기 이름의 `missions/<이름>/index.html`에서 출발합니다.
-2. `zones/<이름>/` 안의 서랍, 상자, 금고, 표지판을 열어 조각을 찾습니다.
-3. 조각을 찾으면 `shared_board/fragments/<이름>.txt`에 기록합니다.
-4. push가 끝나면 말로는 `push`만 말합니다.
-5. 다른 사람은 `pull`을 듣고 `git pull --rebase` 합니다.
-6. `03-mini-game`에서 점수를 얻어 미니게임 키를 받습니다.
-7. 최종 금고에는 `FINAL_VAULT` 비밀번호와 미니게임 키가 모두 필요합니다.
+1. 각자 `missions/<이름>/index.html`을 직접 엽니다.
+2. 자기 미니게임을 풀어 사건 증거 한 줄을 얻습니다.
+3. 얻은 증거를 `shared_board/fragments/<이름>.txt`에 기록합니다.
+4. `git add`, `git commit`, `git push`까지 끝낸 뒤 말로는 `push`만 알려줍니다.
+5. 다른 사람들은 `pull`을 들으면 `git pull --rebase`를 합니다.
+6. 증거가 모이면 `python shared_board/merge_clues.py`로 사건 보드를 확인합니다.
+7. 모두가 충분히 모였다고 판단하면 `case_room/index.html`을 열고 최종 추리를 입력합니다.
 
-## 조각 형식
+## 증거 형식
 
 ```text
-TEAM_GATE|순서|조각
-FINAL_VAULT|순서|조각
+CASE|분류|내용
 ```
 
-## 병합
+예시:
+
+```text
+CASE|SUSPECT|???
+CASE|TIME|??:??
+```
+
+분류는 `SUSPECT`, `WEAPON`, `MOTIVE`, `TIME`, `LOCATION`, `ACCESS`, `ALIBI`, `CONCLUSION` 중 하나입니다.
+
+## 공유 보드 병합
 
 ```powershell
 python shared_board/merge_clues.py
 ```
 
-조각이 모두 모이면 비밀번호가 출력됩니다.
+TXT 파일이 아닌 이미지 단서나 형식이 틀린 기록은 그대로 남겨도 됩니다. 병합 스크립트가 읽을 수 있는 증거만 사건 보드에 정리합니다.

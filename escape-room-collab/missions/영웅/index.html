@@ -1,1 +1,72 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>영웅 Mission</title><link rel="stylesheet" href="../../style.css"></head><body><main class="page"><header class="top"><div class="brand"><span class="mark">영</span><span>영웅 Mission</span></div><span class="tag">personal route</span></header><h1>영웅</h1><p>가짜 MBC 문자열에 속지 말고 정확한 조각 형식을 찾으세요.</p><div class="grid"><a class="card real" href="../../zones/영웅/index.html"><b>영웅 zone</b><span>조사 시작</span></a><a class="card" href="../../shared_board/DISCOVERY_LOG.md"><b>기록 양식</b><span>조각 형식 확인</span></a></div></main></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>영웅 감식 미션</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../case_game.js" defer></script>
+</head>
+<body>
+<main class="page">
+  <header class="top">
+    <div class="brand"><span class="mark">영</span><span>영웅 감식 미션</span></div>
+    <span class="tag">access log</span>
+  </header>
+
+  <section class="mission-layout" data-mini-game data-clue="CASE|ACCESS|마스터키">
+    <div>
+      <h1>출입 기록 복원</h1>
+      <p>사건 시간대의 카드 로그 일부가 지워졌습니다. 문 열림 방식, 승인 기록, 로그 순서를 맞춰 침입 수단을 찾으세요.</p>
+      <div class="case-stats">
+        <div class="case-stat"><b>Score</b><span data-score>0</span></div>
+        <div class="case-stat"><b>Solved</b><span data-solved>0/3</span></div>
+        <div class="case-stat"><b>Role</b><span>출입</span></div>
+      </div>
+      <div class="note">카드 번호보다 문이 열린 방식에 집중하세요.</div>
+    </div>
+
+    <aside class="mini-console">
+      <div class="puzzle-step" data-step>
+        <h2>1. 잠금 해제 방식</h2>
+        <p>일반 게스트 카드와 다른 로그 표시는?</p>
+        <div class="choice-grid">
+          <button class="choice-button" type="button" data-choice data-feedback="방문자 임시 카드입니다.">GUEST-19</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="관리자 해제 방식입니다.">MASTER-OPEN</button>
+          <button class="choice-button" type="button" data-choice data-feedback="경비실 호출 기록입니다.">CALL-SEC</button>
+          <button class="choice-button" type="button" data-choice data-feedback="비상문 센서 기록입니다.">EXIT-STAIR</button>
+        </div>
+      </div>
+
+      <div class="puzzle-step" data-step>
+        <h2>2. 승인 시각</h2>
+        <p>범행 직전 B스튜디오 문이 열린 시각은?</p>
+        <div class="choice-grid three">
+          <button class="choice-button" type="button" data-choice data-feedback="청소팀 출입입니다.">22:50</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="범행 전 접근 가능한 시간입니다.">23:36</button>
+          <button class="choice-button" type="button" data-choice data-feedback="사건 후 경비 확인 시각입니다.">00:08</button>
+        </div>
+      </div>
+
+      <div class="puzzle-step" data-step>
+        <h2>3. 승인자</h2>
+        <p>MASTER-OPEN 권한을 가진 사람은?</p>
+        <div class="choice-grid">
+          <button class="choice-button" type="button" data-choice data-feedback="편집실만 열 수 있습니다.">나유진</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="마스터 권한이 남아 있습니다.">오세린</button>
+          <button class="choice-button" type="button" data-choice data-feedback="소품실 권한뿐입니다.">문태호</button>
+          <button class="choice-button" type="button" data-choice data-feedback="분장실 권한입니다.">강해림</button>
+        </div>
+      </div>
+
+      <div class="status-line" data-status></div>
+      <div class="evidence-box" data-evidence hidden>
+        <b>증거 획득</b>
+        <code>CASE|ACCESS|마스터키</code>
+        <button class="game-button" type="button" data-copy>증거 한 줄 복사</button>
+      </div>
+    </aside>
+  </section>
+</main>
+</body>
+</html>

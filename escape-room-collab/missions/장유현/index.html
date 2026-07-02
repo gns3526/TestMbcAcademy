@@ -1,1 +1,72 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>장유현 Mission</title><link rel="stylesheet" href="../../style.css"></head><body><main class="page"><header class="top"><div class="brand"><span class="mark">장</span><span>장유현 Mission</span></div><span class="tag">personal route</span></header><h1>장유현</h1><p>자기 구역의 잠금함과 거울 상자를 조사해서 조각을 찾으세요.</p><div class="grid"><a class="card real" href="../../zones/장유현/index.html"><b>장유현 zone</b><span>조사 시작</span></a><a class="card" href="../../shared_board/DISCOVERY_LOG.md"><b>기록 양식</b><span>조각 형식 확인</span></a></div></main></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>장유현 감식 미션</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../case_game.js" defer></script>
+</head>
+<body>
+<main class="page">
+  <header class="top">
+    <div class="brand"><span class="mark">장</span><span>장유현 감식 미션</span></div>
+    <span class="tag">alibi check</span>
+  </header>
+
+  <section class="mission-layout" data-mini-game data-clue="CASE|ALIBI|녹화 영상은 12분 지연">
+    <div>
+      <h1>알리바이 검증</h1>
+      <p>용의자는 사건 시간에 화면에 나오고 있었다고 주장합니다. 하지만 방송 송출 방식과 원본 파일의 시간차를 비교해야 합니다.</p>
+      <div class="case-stats">
+        <div class="case-stat"><b>Score</b><span data-score>0</span></div>
+        <div class="case-stat"><b>Solved</b><span data-solved>0/3</span></div>
+        <div class="case-stat"><b>Role</b><span>알리바이</span></div>
+      </div>
+      <div class="note">보이는 화면이 실제 현재를 의미하지 않을 수도 있습니다.</div>
+    </div>
+
+    <aside class="mini-console">
+      <div class="puzzle-step" data-step>
+        <h2>1. 송출 방식</h2>
+        <p>문제의 코너는 어떤 방식으로 송출됐나요?</p>
+        <div class="choice-grid">
+          <button class="choice-button" type="button" data-choice data-feedback="뉴스 오프닝만 생방송입니다.">완전 생방송</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="녹화본이 지연 송출됐습니다.">녹화 지연 송출</button>
+          <button class="choice-button" type="button" data-choice data-feedback="음성 합성 흔적은 없습니다.">AI 더빙</button>
+          <button class="choice-button" type="button" data-choice data-feedback="재방송 편성표와 맞지 않습니다.">재방송</button>
+        </div>
+      </div>
+
+      <div class="puzzle-step" data-step>
+        <h2>2. 시간 차이</h2>
+        <p>원본 파일 생성 시간과 송출 로그의 차이는?</p>
+        <div class="choice-grid three">
+          <button class="choice-button" type="button" data-choice data-feedback="대기실 모니터 지연입니다.">4분</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="원본과 송출 로그가 12분 차이납니다.">12분</button>
+          <button class="choice-button" type="button" data-choice data-feedback="광고 블록 전체 길이입니다.">18분</button>
+        </div>
+      </div>
+
+      <div class="puzzle-step" data-step>
+        <h2>3. 알리바이 판정</h2>
+        <p>화면 출연 주장은 무엇을 의미하나요?</p>
+        <div class="choice-grid">
+          <button class="choice-button" type="button" data-choice data-feedback="송출 지연 때문에 확정할 수 없습니다.">범행 불가능</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="화면은 12분 전 모습입니다.">알리바이 불성립</button>
+          <button class="choice-button" type="button" data-choice data-feedback="음성 분석 결과와 맞지 않습니다.">대역 출연</button>
+          <button class="choice-button" type="button" data-choice data-feedback="휴대폰 위치만으로는 부족합니다.">위치 증명 완료</button>
+        </div>
+      </div>
+
+      <div class="status-line" data-status></div>
+      <div class="evidence-box" data-evidence hidden>
+        <b>증거 획득</b>
+        <code>CASE|ALIBI|녹화 영상은 12분 지연</code>
+        <button class="game-button" type="button" data-copy>증거 한 줄 복사</button>
+      </div>
+    </aside>
+  </section>
+</main>
+</body>
+</html>

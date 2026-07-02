@@ -3,34 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Git Pull Push Escape</title>
+  <title>Midnight Case Pull Push</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main class="page">
   <header class="top">
-    <div class="brand"><span class="mark">G</span><span>Git Pull Push Escape</span></div>
-    <span class="tag">public collab mode</span>
+    <div class="brand"><span class="mark">MC</span><span>Midnight Case Pull Push</span></div>
+    <span class="tag">collab detective mode</span>
   </header>
+
   <section class="hero">
     <div>
-      <h1>말 대신 Git으로 탈출</h1>
-      <p>각자 자기 미션 구역을 조사하고, 발견한 조각을 공유 보드에 남긴 뒤 push하세요. 다른 팀원은 pull로 새 조각을 받아 문을 엽니다.</p>
-      <div class="grid">
-        <a class="card real" href="rooms/01-start/index.html"><b>게임 시작</b><span>규칙과 첫 동선</span></a>
-        <a class="card" href="missions/Giho/index.html"><b>미션 폴더</b><span>자기 이름에서 출발</span></a>
-        <a class="card" href="shared_board/DISCOVERY_LOG.md"><b>공유 보드</b><span>발견 조각 기록 양식</span></a>
-        <a class="card locked" href="rooms/02-team-gate/index.html"><b>TEAM_GATE</b><span>첫 비밀번호 문</span></a>
-        <a class="card" href="rooms/03-mini-game/index.html"><b>지뢰찾기 키 게임</b><span>점수로 미니게임 키 획득</span></a>
-        <a class="card locked" href="rooms/04-final-vault/index.html"><b>FINAL_VAULT</b><span>최종 비밀번호 문</span></a>
-      </div>
-      <div class="note">게임 진행: 조사 → 조각 기록 → push → pull → 문 열기 → 미니게임 키 획득 → 최종 금고</div>
+      <h1>자정 스튜디오 사건</h1>
+      <p>피해자는 생방송 직전 B스튜디오에서 발견됐다. 각자 맡은 감식 미니게임을 풀어 증거를 얻고, 말 대신 push/pull로 사건 보드를 완성한다.</p>
+      <div class="note">이 화면은 안내판입니다. 아래 경로를 직접 열어 진행하세요. 게임 HTML끼리는 서로 연결되어 있지 않습니다.</div>
     </div>
-    <aside class="stage">
-      <div class="matrix"><span>pull</span><span>find</span><span>log</span><span>push</span><span>merge</span><span>gate</span><span>mini</span><span>vault</span></div>
+    <aside class="case-board" aria-label="사건 보드">
+      <div class="pin red"></div>
+      <div class="pin teal"></div>
+      <div class="photo-strip">
+        <span>23:40</span>
+        <span>B-STUDIO</span>
+        <span>MASTER</span>
+      </div>
+      <div class="thread t1"></div>
+      <div class="thread t2"></div>
+      <div class="evidence-card small">CCTV</div>
+      <div class="evidence-card wide">ALIBI?</div>
+      <div class="evidence-card">MOTIVE</div>
+      <div class="evidence-card dark">WHO</div>
     </aside>
   </section>
-  <footer class="footer"><a href="README_PLAYER.md">플레이어 안내</a><a href="missions/">미션 카드</a><a href="zones/">조사 구역</a></footer>
+
+  <section>
+    <h2>개인 미션 경로</h2>
+    <div class="grid path-grid">
+      <div class="card real"><b>Giho</b><span>지문 감식 미니게임</span><code>missions/Giho/index.html</code></div>
+      <div class="card real"><b>jebeen</b><span>흉기 감식 미니게임</span><code>missions/jebeen/index.html</code></div>
+      <div class="card real"><b>김영서</b><span>CCTV 시각 미니게임</span><code>missions/김영서/index.html</code></div>
+      <div class="card real"><b>박채린</b><span>현장 재구성 미니게임</span><code>missions/박채린/index.html</code></div>
+      <div class="card real"><b>영웅</b><span>출입 기록 미니게임</span><code>missions/영웅/index.html</code></div>
+      <div class="card real"><b>장유현</b><span>알리바이 검증 미니게임</span><code>missions/장유현/index.html</code></div>
+      <div class="card real"><b>전영린</b><span>동기 추적 미니게임</span><code>missions/전영린/index.html</code></div>
+      <div class="card real"><b>지재영</b><span>결정적 모순 미니게임</span><code>missions/지재영/index.html</code></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>팀 진행 경로</h2>
+    <div class="grid path-grid">
+      <div class="card"><b>증거 제출함</b><span>각자 얻은 한 줄을 txt로 남깁니다.</span><code>shared_board/fragments/&lt;이름&gt;.txt</code></div>
+      <div class="card"><b>사건 보드 병합</b><span>pull 후 현재까지 모인 증거를 확인합니다.</span><code>python shared_board/merge_clues.py</code></div>
+      <div class="card locked"><b>사건회의실</b><span>전체가 머리를 맞대고 최종 추리를 입력합니다.</span><code>case_room/index.html</code></div>
+      <div class="card"><b>말할 수 있는 단어</b><span>수업 룰에 맞춰 말로는 이것만 허용합니다.</span><code>pull / push</code></div>
+    </div>
+  </section>
+
+  <footer class="footer"><span>solve</span><span>record</span><span>push</span><span>pull</span><span>deduce</span></footer>
 </main>
 </body>
 </html>

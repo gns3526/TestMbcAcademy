@@ -1,1 +1,72 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>전영린 Mission</title><link rel="stylesheet" href="../../style.css"></head><body><main class="page"><header class="top"><div class="brand"><span class="mark">전</span><span>전영린 Mission</span></div><span class="tag">personal route</span></header><h1>전영린</h1><p>조각 번호가 중요합니다. 번호를 빼먹으면 병합이 틀어집니다.</p><div class="grid"><a class="card real" href="../../zones/전영린/index.html"><b>전영린 zone</b><span>조사 시작</span></a><a class="card" href="../../shared_board/DISCOVERY_LOG.md"><b>기록 양식</b><span>조각 형식 확인</span></a></div></main></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>전영린 감식 미션</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../case_game.js" defer></script>
+</head>
+<body>
+<main class="page">
+  <header class="top">
+    <div class="brand"><span class="mark">전</span><span>전영린 감식 미션</span></div>
+    <span class="tag">motive trail</span>
+  </header>
+
+  <section class="mission-layout" data-mini-game data-clue="CASE|MOTIVE|편성 조작 은폐">
+    <div>
+      <h1>동기 추적</h1>
+      <p>삭제된 메일, 편성표 원본, 수정 기록을 맞춰 누가 왜 피해자를 없애야 했는지 추적합니다.</p>
+      <div class="case-stats">
+        <div class="case-stat"><b>Score</b><span data-score>0</span></div>
+        <div class="case-stat"><b>Solved</b><span data-solved>0/3</span></div>
+        <div class="case-stat"><b>Role</b><span>동기</span></div>
+      </div>
+      <div class="note">개인 감정처럼 보이는 기록은 대부분 연막입니다.</div>
+    </div>
+
+    <aside class="mini-console">
+      <div class="puzzle-step" data-step>
+        <h2>1. 원본 편성표</h2>
+        <p>피해자가 보관한 원본에서 발견된 이상점은?</p>
+        <div class="choice-grid">
+          <button class="choice-button" type="button" data-choice data-feedback="단순 오타로 수정됐습니다.">출연자 이름 오타</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="편성 순서가 몰래 바뀌었습니다.">편성 순서 조작</button>
+          <button class="choice-button" type="button" data-choice data-feedback="광고팀 승인 기록이 있습니다.">광고 시간 증가</button>
+          <button class="choice-button" type="button" data-choice data-feedback="공지된 변경입니다.">자막 색상 변경</button>
+        </div>
+      </div>
+
+      <div class="puzzle-step" data-step>
+        <h2>2. 삭제 메일</h2>
+        <p>복구된 메일 제목과 가장 가까운 내용은?</p>
+        <div class="choice-grid">
+          <button class="choice-button" type="button" data-choice data-feedback="협찬팀 자동 알림입니다.">광고비 정산</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="피해자가 조작 사실을 확인하려 했습니다.">편성 조작 확인 요청</button>
+          <button class="choice-button" type="button" data-choice data-feedback="개인 일정 공유입니다.">출연자 미팅</button>
+          <button class="choice-button" type="button" data-choice data-feedback="사건 당일과 무관합니다.">휴가 신청</button>
+        </div>
+      </div>
+
+      <div class="puzzle-step" data-step>
+        <h2>3. 숨길 이유</h2>
+        <p>피해자가 공개하려던 사실은?</p>
+        <div class="choice-grid three">
+          <button class="choice-button" type="button" data-choice data-feedback="소문뿐인 기록입니다.">질투 관계</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="조작을 은폐할 필요가 있었습니다.">편성 조작 은폐</button>
+          <button class="choice-button" type="button" data-choice data-feedback="회계 기록과 맞지 않습니다.">광고비 횡령</button>
+        </div>
+      </div>
+
+      <div class="status-line" data-status></div>
+      <div class="evidence-box" data-evidence hidden>
+        <b>증거 획득</b>
+        <code>CASE|MOTIVE|편성 조작 은폐</code>
+        <button class="game-button" type="button" data-copy>증거 한 줄 복사</button>
+      </div>
+    </aside>
+  </section>
+</main>
+</body>
+</html>

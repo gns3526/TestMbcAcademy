@@ -2,55 +2,92 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 FRAGMENTS = ROOT / "fragments"
-TARGETS = ("TEAM_GATE", "FINAL_VAULT")
+
+REQUIRED = [
+    "SUSPECT",
+    "WEAPON",
+    "MOTIVE",
+    "TIME",
+    "LOCATION",
+    "ACCESS",
+    "ALIBI",
+    "CONCLUSION",
+]
+
+LABELS = {
+    "SUSPECT": "용의자",
+    "WEAPON": "흉기",
+    "MOTIVE": "동기",
+    "TIME": "범행 시각",
+    "LOCATION": "현장",
+    "ACCESS": "출입 수단",
+    "ALIBI": "알리바이 모순",
+    "CONCLUSION": "결정적 추론",
+}
+
+
+def read_text(path):
+    for encoding in ("utf-8-sig", "utf-8", "cp949"):
+        try:
+            return path.read_text(encoding=encoding)
+        except UnicodeDecodeError:
+            continue
+    return path.read_text(encoding="utf-8", errors="replace")
 
 
 def read_fragments():
-    found = {target: {} for target in TARGETS}
-    ignored = 0
+    evidence = {key: [] for key in REQUIRED}
+    ignored = []
+
     for path in sorted(FRAGMENTS.glob("*.txt")):
-        for raw in path.read_text(encoding="utf-8-sig").splitlines():
+        for index, raw in enumerate(read_text(path).splitlines(), start=1):
             line = raw.strip().lstrip("\ufeff")
             if not line or line.startswith("#"):
                 continue
-            parts = line.split("|", 2)
-            if len(parts) != 3:
-                ignored += 1
+
+            parts = [part.strip() for part in line.split("|", 2)]
+            if len(parts) != 3 or parts[0] != "CASE" or parts[1] not in evidence or not parts[2]:
+                ignored.append(f"{path.name}:{index}")
                 continue
-            target, order, piece = parts
-            target = target.strip()
-            if target not in found:
-                ignored += 1
-                continue
-            try:
-                number = int(order)
-            except ValueError:
-                ignored += 1
-                continue
-            found[target][number] = piece.strip()
-    return found, ignored
+
+            evidence[parts[1]].append((path.name, parts[2]))
+
+    return evidence, ignored
 
 
-def show(found, ignored):
-    for target in TARGETS:
-        pieces = found[target]
-        print(f"\n[{target}]")
-        if not pieces:
-            print("  아직 조각 없음")
+def show(evidence, ignored):
+    print("=== 자정 스튜디오 사건 보드 ===")
+
+    missing = []
+    for key in REQUIRED:
+        entries = evidence[key]
+        print(f"\n[{key}] {LABELS[key]}")
+        if not entries:
+            missing.append(key)
+            print("  아직 증거 없음")
             continue
-        for number in sorted(pieces):
-            print(f"  {number:02d}: {pieces[number]}")
-        expected = 8
-        missing = [number for number in range(1, expected + 1) if number not in pieces]
-        if missing:
-            print(f"  부족한 번호: {', '.join(f'{n:02d}' for n in missing)}")
-        else:
-            print(f"  완성 비밀번호: {''.join(pieces[n] for n in range(1, expected + 1))}")
+
+        seen = set()
+        for filename, value in entries:
+            marker = value.casefold()
+            if marker in seen:
+                continue
+            seen.add(marker)
+            print(f"  - {value}  ({filename})")
+
+    if missing:
+        print("\n아직 모자란 증거:")
+        print("  " + ", ".join(f"{key}({LABELS[key]})" for key in missing))
+    else:
+        print("\n탐정회의 준비 완료: case_room/index.html에서 최종 추리를 입력하세요.")
+
     if ignored:
-        print(f"\n형식이 맞지 않아 무시한 기록: {ignored}")
+        print("\n형식이 맞지 않아 건너뛴 기록:")
+        for item in ignored:
+            print(f"  - {item}")
 
 
 if __name__ == "__main__":
     FRAGMENTS.mkdir(parents=True, exist_ok=True)
-    found, ignored = read_fragments()
-    show(found, ignored)
+    found, skipped = read_fragments()
+    show(found, skipped)

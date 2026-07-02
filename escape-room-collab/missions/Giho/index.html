@@ -1,1 +1,71 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>Giho Mission</title><link rel="stylesheet" href="../../style.css"></head><body><main class="page"><header class="top"><div class="brand"><span class="mark">G</span><span>Giho Mission</span></div><span class="tag">personal route</span></header><h1>Giho</h1><p>자기 구역을 조사해서 두 조각을 찾아 공유 보드에 남기세요.</p><div class="grid"><a class="card real" href="../../zones/Giho/index.html"><b>Giho zone</b><span>조사 시작</span></a><a class="card" href="../../shared_board/DISCOVERY_LOG.md"><b>기록 양식</b><span>조각 형식 확인</span></a></div></main></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giho 감식 미션</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../case_game.js" defer></script>
+</head>
+<body>
+<main class="page">
+  <header class="top">
+    <div class="brand"><span class="mark">G</span><span>Giho 감식 미션</span></div>
+    <span class="tag">fingerprint sweep</span>
+  </header>
+
+  <section class="mission-layout" data-mini-game data-clue="CASE|SUSPECT|오세린">
+    <div>
+      <h1>지문 감식대</h1>
+      <p>피해자 책상 위 컵과 출입 카드 케이스에서 겹치는 지문을 찾습니다. 흐릿한 후보가 많지만 세 단서를 모두 맞추면 용의자가 좁혀집니다.</p>
+      <div class="case-stats">
+        <div class="case-stat"><b>Score</b><span data-score>0</span></div>
+        <div class="case-stat"><b>Solved</b><span data-solved>0/3</span></div>
+        <div class="case-stat"><b>Role</b><span>감식</span></div>
+      </div>
+      <div class="note">성공 후 표시되는 증거 한 줄만 `shared_board/fragments/Giho.txt`에 남기면 됩니다.</div>
+    </div>
+
+    <aside class="mini-console">
+      <div class="puzzle-step" data-step>
+        <h2>1. 컵 표면</h2>
+        <p>가장 선명한 융선 패턴을 고르세요.</p>
+        <div class="choice-grid three">
+          <button class="choice-button" type="button" data-choice data-feedback="번진 지문입니다.">A-03</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="컵 손잡이에서 반복되는 패턴입니다.">O-17</button>
+          <button class="choice-button" type="button" data-choice data-feedback="장갑 자국입니다.">K-22</button>
+        </div>
+      </div>
+
+      <div class="puzzle-step" data-step>
+        <h2>2. 카드 케이스</h2>
+        <p>컵의 O-17과 겹치는 손가락 위치를 맞추세요.</p>
+        <div class="choice-grid three">
+          <button class="choice-button" type="button" data-choice data-feedback="부분만 맞고 방향이 다릅니다.">오른손 검지</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="동일한 왼손 엄지 패턴입니다.">왼손 엄지</button>
+          <button class="choice-button" type="button" data-choice data-feedback="피해자 본인 지문입니다.">오른손 엄지</button>
+        </div>
+      </div>
+
+      <div class="puzzle-step" data-step>
+        <h2>3. 등록 지문 대조</h2>
+        <p>왼손 엄지 O-17과 일치하는 등록자를 선택하세요.</p>
+        <div class="choice-grid">
+          <button class="choice-button" type="button" data-choice data-feedback="야간 출입 흔적이 없습니다.">문태호</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="등록 지문과 완전히 일치합니다.">오세린</button>
+          <button class="choice-button" type="button" data-choice data-feedback="유사하지만 융선 끝점이 다릅니다.">나유진</button>
+          <button class="choice-button" type="button" data-choice data-feedback="분장실에서만 검출됐습니다.">강해림</button>
+        </div>
+      </div>
+
+      <div class="status-line" data-status></div>
+      <div class="evidence-box" data-evidence hidden>
+        <b>증거 획득</b>
+        <code>CASE|SUSPECT|오세린</code>
+        <button class="game-button" type="button" data-copy>증거 한 줄 복사</button>
+      </div>
+    </aside>
+  </section>
+</main>
+</body>
+</html>

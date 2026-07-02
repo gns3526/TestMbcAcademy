@@ -1,1 +1,73 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>지재영 Mission</title><link rel="stylesheet" href="../../style.css"></head><body><main class="page"><header class="top"><div class="brand"><span class="mark">지</span><span>지재영 Mission</span></div><span class="tag">personal route</span></header><h1>지재영</h1><p>마지막 조각은 끝처럼 보이지만, push되기 전까지는 팀의 것이 아닙니다.</p><div class="grid"><a class="card real" href="../../zones/지재영/index.html"><b>지재영 zone</b><span>조사 시작</span></a><a class="card" href="../../shared_board/DISCOVERY_LOG.md"><b>기록 양식</b><span>조각 형식 확인</span></a></div></main></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지재영 감식 미션</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../case_game.js" defer></script>
+</head>
+<body>
+<main class="page">
+  <header class="top">
+    <div class="brand"><span class="mark">지</span><span>지재영 감식 미션</span></div>
+    <span class="tag">last contradiction</span>
+  </header>
+
+  <section class="mission-layout" data-mini-game data-clue="CASE|CONCLUSION|오세린은 지연 송출을 이용해 알리바이를 만들었다">
+    <div>
+      <h1>결정적 모순</h1>
+      <p>흩어진 증거가 서로 맞물리는 한 문장을 찾아야 합니다. 범인, 시간, 송출 방식이 동시에 설명되는 추론만 살아남습니다.</p>
+      <div class="case-stats">
+        <div class="case-stat"><b>Score</b><span data-score>0</span></div>
+        <div class="case-stat"><b>Solved</b><span data-solved>0/3</span></div>
+        <div class="case-stat"><b>Role</b><span>결론</span></div>
+      </div>
+      <div class="note">마지막 증거는 답을 외우는 게 아니라, 다른 팀원의 증거와 맞물릴 때 힘을 갖습니다.</div>
+    </div>
+
+    <aside class="mini-console">
+      <div class="puzzle-step" data-step>
+        <h2>1. 알리바이의 빈틈</h2>
+        <p>화면에 나오던 용의자가 동시에 움직일 수 있었던 이유는?</p>
+        <div class="choice-grid">
+          <button class="choice-button" type="button" data-choice data-feedback="대역 흔적은 발견되지 않았습니다.">대역 출연</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="화면은 현재가 아니었습니다.">지연 송출</button>
+          <button class="choice-button" type="button" data-choice data-feedback="통화 기록과 맞지 않습니다.">휴대폰 두 대</button>
+          <button class="choice-button" type="button" data-choice data-feedback="조명실 로그와 무관합니다.">정전 사고</button>
+        </div>
+      </div>
+
+      <div class="puzzle-step" data-step>
+        <h2>2. 가능한 행동</h2>
+        <p>지연 시간 동안 가능한 일은?</p>
+        <div class="choice-grid">
+          <button class="choice-button" type="button" data-choice data-feedback="장비 이동 시간이 부족합니다.">옥상으로 이동</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="B스튜디오 접근과 현장 이탈이 가능합니다.">B스튜디오 출입</button>
+          <button class="choice-button" type="button" data-choice data-feedback="편집실 권한이 필요 없습니다.">A편집실 삭제</button>
+          <button class="choice-button" type="button" data-choice data-feedback="외부 출입 기록이 없습니다.">건물 밖 도주</button>
+        </div>
+      </div>
+
+      <div class="puzzle-step" data-step>
+        <h2>3. 완성되는 문장</h2>
+        <p>모든 증거를 동시에 설명하는 결론은?</p>
+        <div class="choice-grid">
+          <button class="choice-button" type="button" data-choice data-feedback="소품실 봉쇄와 시간이 맞지 않습니다.">문태호가 소품실을 먼저 봉쇄했다</button>
+          <button class="choice-button" type="button" data-choice data-correct="true" data-feedback="범인과 방법, 알리바이가 하나로 이어집니다.">오세린은 지연 송출을 이용해 알리바이를 만들었다</button>
+          <button class="choice-button" type="button" data-choice data-feedback="흉기 증거와 이어지지 않습니다.">나유진은 조명실에서 트로피를 숨겼다</button>
+          <button class="choice-button" type="button" data-choice data-feedback="경비 로그 위조 흔적이 없습니다.">강해림은 경비 로그를 위조했다</button>
+        </div>
+      </div>
+
+      <div class="status-line" data-status></div>
+      <div class="evidence-box" data-evidence hidden>
+        <b>증거 획득</b>
+        <code>CASE|CONCLUSION|오세린은 지연 송출을 이용해 알리바이를 만들었다</code>
+        <button class="game-button" type="button" data-copy>증거 한 줄 복사</button>
+      </div>
+    </aside>
+  </section>
+</main>
+</body>
+</html>
