@@ -16,8 +16,8 @@
   <section class="hero">
     <div>
       <h1>자정 스튜디오 사건</h1>
-      <p>피해자는 생방송 직전 B스튜디오에서 발견됐다. 각자 맡은 감식 미니게임을 풀어 증거를 얻고, 말 대신 push/pull로 사건 보드를 완성한다.</p>
-      <div class="note">이 화면은 안내판입니다. 아래 경로를 직접 열어 진행하세요. 게임 HTML끼리는 서로 연결되어 있지 않습니다.</div>
+      <p>각자 미니게임으로 증거 한 조각을 얻고, 말 대신 push/pull로 증거를 합쳐 범인을 추리하는 협력 게임입니다.</p>
+      <div class="note">이 화면은 안내판입니다. HTML끼리 이어져 있지 않으니 아래 경로를 직접 열어 진행하세요.</div>
     </div>
     <aside class="case-board" aria-label="사건 보드">
       <div class="pin red"></div>
@@ -37,6 +37,18 @@
   </section>
 
   <section>
+    <h2>폴더 안내</h2>
+    <div class="grid path-grid">
+      <div class="card real"><b>missions/</b><span>개인 미션 폴더입니다. 자기 이름의 index.html만 열어 미니게임을 풉니다.</span><code>missions/&lt;이름&gt;/index.html</code></div>
+      <div class="card real"><b>shared_board/</b><span>증거를 모으는 공유 보드입니다. fragments에 증거 txt를 남기고 push합니다.</span><code>shared_board/fragments/&lt;이름&gt;.txt</code></div>
+      <div class="card real"><b>case_room/</b><span>마지막 사건회의실입니다. 모두가 pull로 증거를 모은 뒤 최종 추리를 입력합니다.</span><code>case_room/index.html</code></div>
+      <div class="card locked"><b>rooms/</b><span>들어가지마시오. 이전 방탈출 구조를 막아 둔 경고 구역입니다.</span><code>DO NOT ENTER</code></div>
+      <div class="card locked"><b>zones/</b><span>들어가지마시오. 예전 조사 구역을 막아 둔 경고 구역입니다.</span><code>DO NOT ENTER</code></div>
+      <div class="card"><b>style.css / case_game.js / serve.py</b><span>게임 시스템 파일입니다. 플레이어는 직접 수정하거나 들어갈 필요가 없습니다.</span><code>system files</code></div>
+    </div>
+  </section>
+
+  <section>
     <h2>개인 미션 경로</h2>
     <div class="grid path-grid">
       <div class="card real"><b>Giho</b><span>지문 감식 미니게임</span><code>missions/Giho/index.html</code></div>
@@ -51,16 +63,16 @@
   </section>
 
   <section>
-    <h2>팀 진행 경로</h2>
+    <h2>팀 진행 순서</h2>
     <div class="grid path-grid">
-      <div class="card"><b>증거 제출함</b><span>각자 얻은 한 줄을 txt로 남깁니다.</span><code>shared_board/fragments/&lt;이름&gt;.txt</code></div>
-      <div class="card"><b>사건 보드 병합</b><span>pull 후 현재까지 모인 증거를 확인합니다.</span><code>python shared_board/merge_clues.py</code></div>
-      <div class="card locked"><b>사건회의실</b><span>전체가 머리를 맞대고 최종 추리를 입력합니다.</span><code>case_room/index.html</code></div>
-      <div class="card"><b>말할 수 있는 단어</b><span>수업 룰에 맞춰 말로는 이것만 허용합니다.</span><code>pull / push</code></div>
+      <div class="card"><b>1. 개인 미션</b><span>각자 자기 미니게임을 풀어 증거 한 줄을 얻습니다.</span><code>CASE|분류|내용</code></div>
+      <div class="card"><b>2. 증거 push</b><span>자기 txt 파일에 증거를 기록하고 commit/push합니다.</span><code>shared_board/fragments/&lt;이름&gt;.txt</code></div>
+      <div class="card"><b>3. 증거 pull</b><span>다른 사람이 push라고 말하면 pull로 새 증거를 받습니다.</span><code>git pull --rebase</code></div>
+      <div class="card locked"><b>4. 탐정추리완료</b><span>모든 증거를 모아 사건회의실에서 최종 추리를 맞힙니다.</span><code>case_room/index.html</code></div>
     </div>
   </section>
 
-  <footer class="footer"><span>solve</span><span>record</span><span>push</span><span>pull</span><span>deduce</span></footer>
+  <footer class="footer"><span>mission</span><span>record</span><span>push</span><span>pull</span><span>case room</span></footer>
 </main>
 </body>
 </html>
