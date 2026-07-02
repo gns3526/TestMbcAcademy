@@ -54,6 +54,10 @@ body {
   align-items: start;
 }
 
+.mission-layout {
+  grid-template-columns: minmax(310px, .86fr) minmax(380px, 1.14fr);
+}
+
 h1 { font-size: clamp(38px, 7vw, 70px); line-height: .95; margin: 0 0 18px; letter-spacing: 0; }
 h2 { margin: 28px 0 12px; font-size: 24px; letter-spacing: 0; }
 h3 { margin: 0 0 10px; letter-spacing: 0; }
@@ -141,20 +145,166 @@ code { font-family: Consolas, "Courier New", monospace; overflow-wrap: anywhere;
 
 .case-stat b { display: block; color: var(--gold); font-size: 12px; text-transform: uppercase; margin-bottom: 5px; }
 
+.progress-track {
+  height: 10px;
+  margin-top: 14px;
+  border: 1px solid rgba(243, 240, 232, .16);
+  background: #0b1016;
+  overflow: hidden;
+}
+
+.progress-track span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+  transition: width 240ms ease;
+}
+
+.mission-pad {
+  margin-top: 18px;
+  padding: 15px;
+  border: 1px solid rgba(243, 240, 232, .14);
+  background: rgba(0, 0, 0, .16);
+}
+
+.mission-pad b { display: block; color: var(--gold); margin-bottom: 6px; }
+
 .mini-console {
+  display: grid;
+  gap: 12px;
   border: 1px solid rgba(243, 240, 232, .18);
-  background: linear-gradient(180deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .018)), var(--panel);
+  background:
+    linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .018)),
+    var(--panel);
+  background-size: 100% 6px, 6px 100%, auto, auto;
   padding: 18px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, .34);
+}
+
+.game-scene {
+  position: relative;
+  min-height: 230px;
+  border: 1px solid rgba(79, 183, 173, .54);
+  background:
+    linear-gradient(135deg, rgba(79, 183, 173, .13), transparent 42%),
+    linear-gradient(225deg, rgba(212, 166, 76, .1), transparent 48%),
+    #0d1319;
+  overflow: hidden;
+  padding: 16px;
+}
+
+.game-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 0 93%, rgba(79, 183, 173, .18) 94% 100%);
+  background-size: 100% 9px;
+  pointer-events: none;
+  opacity: .5;
+}
+
+.scene-title {
+  position: relative;
+  z-index: 1;
+  color: var(--gold);
+  font: 900 13px Consolas, "Courier New", monospace;
+  text-transform: uppercase;
+}
+
+.scene-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.scene-token {
+  min-height: 72px;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  border: 1px solid rgba(243, 240, 232, .16);
+  background: rgba(0, 0, 0, .22);
+  color: var(--muted);
+  font: 900 14px Consolas, "Courier New", monospace;
+  text-align: center;
+}
+
+.scene-token.hot { border-color: rgba(212, 166, 76, .74); color: var(--gold); background: rgba(212, 166, 76, .12); }
+.scene-token.good { border-color: rgba(123, 211, 141, .62); color: #dfffe6; }
+.scene-token.bad { border-color: rgba(213, 102, 88, .62); color: #ffdcd8; }
+.scene-token.wide { grid-column: span 2; }
+
+.scene-readout {
+  position: relative;
+  z-index: 1;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid rgba(121, 167, 255, .36);
+  background: rgba(121, 167, 255, .08);
+  color: #dfe9ff;
+  font: 800 13px Consolas, "Courier New", monospace;
+}
+
+.dossier {
+  padding: 14px;
+  border: 1px solid rgba(121, 167, 255, .36);
+  background: rgba(121, 167, 255, .08);
+}
+
+.dossier h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.dossier-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.dossier-card {
+  min-height: 74px;
+  padding: 12px;
+  border: 1px solid rgba(243, 240, 232, .14);
+  background: rgba(0, 0, 0, .18);
+}
+
+.dossier-card.wide { grid-column: 1 / -1; }
+.dossier-card b { display: block; margin-bottom: 6px; color: var(--gold); }
+.dossier-card span { display: block; color: var(--muted); line-height: 1.55; font-size: 13px; }
+.dossier-card code { display: inline-block; margin: 2px 0; color: #dfe9ff; }
+
+.mini-list {
+  margin: 4px 0 0;
+  padding-left: 18px;
+}
+
+.mini-list li {
+  margin: 3px 0;
+  font-size: 13px;
 }
 
 .puzzle-step {
   padding: 14px;
   border: 1px solid rgba(243, 240, 232, .14);
   background: rgba(0, 0, 0, .16);
-  margin-bottom: 12px;
+  transition: opacity 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
 .puzzle-step.solved { border-color: rgba(123, 211, 141, .72); }
+.puzzle-step.active-step { border-color: rgba(212, 166, 76, .62); transform: translateX(-2px); }
+.puzzle-step.locked-step { opacity: .44; filter: saturate(.45); }
+.puzzle-step.locked-step h2::after {
+  content: "  LOCKED";
+  color: var(--red);
+  font: 900 12px Consolas, "Courier New", monospace;
+}
 .choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .choice-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
@@ -187,6 +337,7 @@ code { font-family: Consolas, "Courier New", monospace; overflow-wrap: anywhere;
   font-size: 17px;
   font-weight: 900;
 }
+.reward-pop { animation: reward-pop 340ms ease; }
 
 .case-form {
   display: grid;
@@ -210,6 +361,12 @@ code { font-family: Consolas, "Courier New", monospace; overflow-wrap: anywhere;
   color: #e7ffed;
 }
 
+@keyframes reward-pop {
+  0% { transform: scale(.97); }
+  65% { transform: scale(1.018); }
+  100% { transform: scale(1); }
+}
+
 .footer {
   display: flex;
   flex-wrap: wrap;
@@ -222,7 +379,9 @@ code { font-family: Consolas, "Courier New", monospace; overflow-wrap: anywhere;
 
 @media (max-width: 820px) {
   .hero, .mission-layout, .case-layout { grid-template-columns: 1fr; }
-  .grid, .choice-grid, .choice-grid.three { grid-template-columns: 1fr; }
+  .grid, .choice-grid, .choice-grid.three, .dossier-grid, .scene-grid { grid-template-columns: 1fr; }
+  .dossier-card.wide { grid-column: auto; }
+  .scene-token.wide { grid-column: auto; }
   .case-stats { grid-template-columns: 1fr; }
   .top { align-items: flex-start; flex-direction: column; }
 }

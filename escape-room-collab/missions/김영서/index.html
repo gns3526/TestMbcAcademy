@@ -23,10 +23,41 @@
         <div class="case-stat"><b>Solved</b><span data-solved>0/3</span></div>
         <div class="case-stat"><b>Role</b><span>시각</span></div>
       </div>
+      <div class="progress-track"><span data-progress></span></div>
       <div class="note">보이는 시간이 아니라 보정된 시간이 중요합니다.</div>
     </div>
 
     <aside class="mini-console">
+      <div class="game-scene">
+        <div class="scene-title">cctv desk / time sync</div>
+        <div class="scene-grid">
+          <div class="scene-token hot">CAM-2<br>23:28</div>
+          <div class="scene-token good">DELAY<br>+12m</div>
+          <div class="scene-token hot">REAL<br>23:40</div>
+          <div class="scene-token wide">door log<br>B-STUDIO opens after last sighting</div>
+          <div class="scene-token bad">00:05<br>too late</div>
+        </div>
+        <div class="scene-readout">SYNC: displayed time is not server time</div>
+      </div>
+
+      <div class="dossier">
+        <h2>영상 로그</h2>
+        <div class="dossier-grid">
+          <div class="dossier-card">
+            <b>복도 CAM-2</b>
+            <span>피해자 마지막 생존 장면 표시 시간 <code>23:28</code>. 이후 B스튜디오 문만 열림.</span>
+          </div>
+          <div class="dossier-card">
+            <b>서버 보정값</b>
+            <span>스튜디오 내부 시계가 서버 시간보다 <code>12분</code> 느리게 기록됨.</span>
+          </div>
+          <div class="dossier-card wide">
+            <b>타임라인 계산</b>
+            <span>표시 시간 23:28 + 보정 12분 = 실제 사건 가능 시각 <code>23:40</code>.</span>
+          </div>
+        </div>
+      </div>
+
       <div class="puzzle-step" data-step>
         <h2>1. 복도 카메라</h2>
         <p>피해자가 마지막으로 살아 있던 장면은?</p>

@@ -23,10 +23,41 @@
         <div class="case-stat"><b>Solved</b><span data-solved>0/3</span></div>
         <div class="case-stat"><b>Role</b><span>알리바이</span></div>
       </div>
+      <div class="progress-track"><span data-progress></span></div>
       <div class="note">보이는 화면이 실제 현재를 의미하지 않을 수도 있습니다.</div>
     </div>
 
     <aside class="mini-console">
+      <div class="game-scene">
+        <div class="scene-title">broadcast monitor / delay check</div>
+        <div class="scene-grid">
+          <div class="scene-token">ON AIR<br>visible</div>
+          <div class="scene-token hot">REC FILE<br>-12m</div>
+          <div class="scene-token good">ALIBI<br>broken</div>
+          <div class="scene-token wide hot">녹화 영상은 12분 지연</div>
+          <div class="scene-token bad">LIVE<br>false</div>
+        </div>
+        <div class="scene-readout">COMPARE: original file time vs broadcast log</div>
+      </div>
+
+      <div class="dossier">
+        <h2>송출 자료</h2>
+        <div class="dossier-grid">
+          <div class="dossier-card">
+            <b>코너 송출 방식</b>
+            <span>뉴스 오프닝만 생방송. 문제의 코너는 녹화본을 지연 송출.</span>
+          </div>
+          <div class="dossier-card">
+            <b>시간 차이</b>
+            <span>원본 파일 생성 시간과 송출 로그 사이에 <code>12분</code> 차이가 있음.</span>
+          </div>
+          <div class="dossier-card wide">
+            <b>판정</b>
+            <span>화면 속 출연은 사건 순간의 위치를 증명하지 못함. 알리바이는 성립하지 않음.</span>
+          </div>
+        </div>
+      </div>
+
       <div class="puzzle-step" data-step>
         <h2>1. 송출 방식</h2>
         <p>문제의 코너는 어떤 방식으로 송출됐나요?</p>

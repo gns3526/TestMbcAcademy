@@ -23,10 +23,46 @@
         <div class="case-stat"><b>Solved</b><span data-solved>0/3</span></div>
         <div class="case-stat"><b>Role</b><span>출입</span></div>
       </div>
+      <div class="progress-track"><span data-progress></span></div>
       <div class="note">카드 번호보다 문이 열린 방식에 집중하세요.</div>
     </div>
 
     <aside class="mini-console">
+      <div class="game-scene">
+        <div class="scene-title">access terminal / door replay</div>
+        <div class="scene-grid">
+          <div class="scene-token">GUEST-19<br>visitor</div>
+          <div class="scene-token hot">MASTER-OPEN<br>admin</div>
+          <div class="scene-token">CALL-SEC<br>guard</div>
+          <div class="scene-token wide good">23:36 / B-STUDIO door unlocked</div>
+          <div class="scene-token hot">권한자<br>오세린</div>
+        </div>
+        <div class="scene-readout">TRACE: unlock type -> time -> owner privilege</div>
+      </div>
+
+      <div class="dossier">
+        <h2>출입 단말기</h2>
+        <div class="dossier-grid">
+          <div class="dossier-card">
+            <b>문 열림 방식</b>
+            <span>일반 카드 로그는 CARD-OK로 찍히지만 사건 로그는 <code>MASTER-OPEN</code>으로 남음.</span>
+          </div>
+          <div class="dossier-card">
+            <b>승인 시각</b>
+            <span>B스튜디오 방음문은 범행 직전 <code>23:36</code>에 열림.</span>
+          </div>
+          <div class="dossier-card wide">
+            <b>권한표</b>
+            <ul class="mini-list">
+              <li>나유진: 편집실 권한</li>
+              <li>오세린: 마스터 권한 유지</li>
+              <li>문태호: 소품실 권한</li>
+              <li>강해림: 분장실 권한</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <div class="puzzle-step" data-step>
         <h2>1. 잠금 해제 방식</h2>
         <p>일반 게스트 카드와 다른 로그 표시는?</p>

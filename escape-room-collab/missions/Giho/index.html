@@ -23,10 +23,45 @@
         <div class="case-stat"><b>Solved</b><span data-solved>0/3</span></div>
         <div class="case-stat"><b>Role</b><span>감식</span></div>
       </div>
+      <div class="progress-track"><span data-progress></span></div>
       <div class="note">성공 후 표시되는 증거 한 줄만 `shared_board/fragments/Giho.txt`에 남기면 됩니다.</div>
     </div>
 
     <aside class="mini-console">
+      <div class="game-scene">
+        <div class="scene-title">fingerprint scanner / live compare</div>
+        <div class="scene-grid">
+          <div class="scene-token bad">A-03<br>blur 42%</div>
+          <div class="scene-token hot">O-17<br>match 91%</div>
+          <div class="scene-token">K-22<br>glove</div>
+          <div class="scene-token wide good">L-THUMB<br>same ridge flow</div>
+          <div class="scene-token hot">OWNER<br>오세린</div>
+        </div>
+        <div class="scene-readout">SCAN: cup handle -> card case -> registered print</div>
+      </div>
+
+      <div class="dossier">
+        <h2>감식 자료</h2>
+        <div class="dossier-grid">
+          <div class="dossier-card">
+            <b>컵 손잡이 표본</b>
+            <span>선명도 91%, 왼쪽으로 감기는 고리형 융선. 표본 번호 <code>O-17</code>.</span>
+          </div>
+          <div class="dossier-card">
+            <b>출입 카드 케이스</b>
+            <span>같은 융선이 왼쪽 엄지 위치에서 반복 검출됨. 표시값 <code>O-17 / L-THUMB</code>.</span>
+          </div>
+          <div class="dossier-card wide">
+            <b>등록 지문표</b>
+            <ul class="mini-list">
+              <li><code>A-03</code> 나유진 / 오른손 검지 / 선명도 42%</li>
+              <li><code>O-17</code> 오세린 / 왼손 엄지 / 선명도 91%</li>
+              <li><code>K-22</code> 문태호 / 장갑 압흔 / 등록 지문 아님</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <div class="puzzle-step" data-step>
         <h2>1. 컵 표면</h2>
         <p>가장 선명한 융선 패턴을 고르세요.</p>
